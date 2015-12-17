@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import com.bikestore.security.RoleType;
 
 @Entity
-@Table(name = "ACCOUNTS_ROLES")
+@Table(name = "ACCOUNT_ROLES")
 public class AccountRole {
 	@Id
 	private Long id;

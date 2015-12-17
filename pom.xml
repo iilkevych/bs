@@ -14,6 +14,7 @@
 		<hibernate.version>5.0.4.Final</hibernate.version>
 		<tiles.version>3.0.5</tiles.version>
 		<mysql.connector.version>5.1.37</mysql.connector.version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 
 	<dependencies>
@@ -146,7 +147,23 @@
 			<artifactId>tiles-template</artifactId>
 			<version>${tiles.version}</version>
 		</dependency>
-		
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate4</artifactId>
+			<version>2.5.3</version>
+		</dependency>
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -154,7 +171,24 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+				<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

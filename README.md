@@ -16,11 +16,11 @@ ERD
 
 JSON API
 =========
-/menus GET in-restaurantId out-List<Menu>
+/menus GET in-restaurantId out-List\<Menu\>
 /menu POST in-Menu out-Status, DELETE in-menu out-Status
-/top GET out-List<Menu>
+/top GET out-List\<Menu\>
 /vote GET in-menuId out-Status
-/restaurants GET out-List<Restaurant>
+/restaurants GET out-List\<Restaurant\>
 /restaurant POST in-Restaurant out-Status, DELETE in-RestaurandId out Status
 
 #Notes

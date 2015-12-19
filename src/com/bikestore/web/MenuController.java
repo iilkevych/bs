@@ -9,31 +9,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bikestore.business.RestaurantService;
-import com.bikestore.domain.Restaurant;
+import com.bikestore.business.MenuService;
+import com.bikestore.domain.Menu;
 import com.bikestore.web.core.Status;
 
 @RestController
-public class RestaurantController {
+public class MenuController {
 
 	@Autowired
-	RestaurantService restaurantService;
+	MenuService menusService;
 
-	@RequestMapping("/restaurants")
-	public List<Restaurant> restaurants() {
-		return restaurantService.getRestaurants();
+	@RequestMapping("/menus")
+	public List<Menu> restaurants(@RequestParam("restaurantId") Long restaurantId) {
+		return menusService.getMenus(restaurantId);
 	}
 
-	@RequestMapping(value = "/restaurant", method = RequestMethod.POST)
-	public Status add(@RequestBody Restaurant r) {
+	@RequestMapping(value = "/menu", method = RequestMethod.POST)
+	public Status add(@RequestBody Menu r) {
 		Status s = new Status();
-		s.setId(restaurantService.save(r).getId());
+		s.setId(menusService.save(r).getId());
 		return s;
 	}
 
-	@RequestMapping(value = "/restaurant", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/menu", method = RequestMethod.DELETE)
 	public Status delete(@RequestParam("id") Long id) {
-		restaurantService.delete(id);
+		menusService.delete(id);
 		return new Status();
 	}
 }

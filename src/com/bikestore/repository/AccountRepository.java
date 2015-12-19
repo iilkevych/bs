@@ -6,5 +6,5 @@ import com.bikestore.domain.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 	
-	Account findByUsername(String username);
+	public Account findByUsername(String username);
 }

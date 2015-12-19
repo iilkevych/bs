@@ -30,7 +30,7 @@ public class VotesRepositoryTest {
 	public void testVoteRestaurant() {
 		Vote v = new Vote();
 		v.setAccount(accountRepository.findByUsername("iilkev"));
-		v.setMenu(menuRepository.findByRestaurantName("MacD"));
+		v.setMenu(menuRepository.findByRestaurantName("MacD").get(0));
 		votesRepository.save(v);
 	}
 	@Test

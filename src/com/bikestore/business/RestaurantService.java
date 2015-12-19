@@ -13,6 +13,8 @@ public interface RestaurantService {
 
 	public Restaurant save(Restaurant r);
 
+	public Restaurant getRestaurant(Long id);
+
 	public void delete(Long id);
 
 }

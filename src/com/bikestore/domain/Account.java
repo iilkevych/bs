@@ -2,6 +2,7 @@ package com.bikestore.domain;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Account {
 
 	private boolean enabled;
 
-	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER, cascade={CascadeType.PERSIST, CascadeType.MERGE})
 	private Set<AccountRole> accountRoles;
 
 	public Long getId() {

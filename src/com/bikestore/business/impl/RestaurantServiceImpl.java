@@ -14,9 +14,15 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Autowired
 	RestaurantRepository restaurantRepository;
+
 	@Override
 	public List<Restaurant> getRestaurants() {
 		return restaurantRepository.findAll();
+	}
+
+	@Override
+	public Restaurant getRestaurant(Long id) {
+		return restaurantRepository.findOne(id);
 	}
 
 	@Override
@@ -28,5 +34,4 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public void delete(Long id) {
 		restaurantRepository.delete(id);
 	}
-
 }

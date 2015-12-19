@@ -2,6 +2,7 @@ package com.bikestore.domain;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class Menu {
 	@JoinColumn(name = "REST_ID")
 	private Restaurant restaurant;
 
-	@OneToMany(mappedBy = "menu", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "menu", fetch = FetchType.EAGER, cascade={CascadeType.PERSIST, CascadeType.MERGE})
 	private Set<Dish> dishes;
 
 	public Long getId() {

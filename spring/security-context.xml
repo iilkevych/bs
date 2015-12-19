@@ -9,10 +9,11 @@
     	<access-denied-handler error-page="/Access_Denied" />
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
-        <intercept-url pattern="/vote**" access="hasRole('ROLE_USER')" />
-        <intercept-url pattern="/top**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/dba**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/vote**" access="hasRole('ROLE_USER','ROLE_ADMIN')" />
+        <intercept-url pattern="/top**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/menu**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/restaurant**" access="hasRole('ROLE_ADMIN')" />
         <form-login  login-page="/login"
                      username-parameter="ssoId"
                      password-parameter="password"
